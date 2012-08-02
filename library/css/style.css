@@ -1,9 +1,8 @@
 /******************************************************************
-Theme Name: Bones Child Theme
+Theme Name: BOOTSTRAP-GENESIS-CHILD
 Theme URI: http://www.themble.com/genesis/bones
-Description: Helpful for building Genesis Child Themes, Bones for Genesis is a child development theme for the Genesis Framework.
-Author: Eddie Machado
-Author URI: http://www.themble.com/
+Description: Bootstrap version of Bones child theme
+Author: Grindpress
 Version: 1.02
 Tags: html5, css3, fixed, hb5
 Template: genesis
@@ -20,8 +19,8 @@ breakpoint organized and well documented.
 IMPORTING STYLES
 *********************/
 /******************************************************************
-Site Name: GetPaidForYourShortSale.com
-Author: Shaun Burrell
+Site Name: 
+Author: 
 
 Stylesheet: Normalize Stylesheet
 
@@ -700,6 +699,7 @@ HEADER
 #header {
   width: 100%;
   min-height: 100px;
+  display: none; /* hide on mobile devices */
   /*********************
 	HEADER WIDGET AREA
 	*********************/
@@ -768,9 +768,9 @@ NAVIGATION
 *********************/
 .menu {
   clear: both;
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #ddd;
-  color: #333;
+  background-color: none;
+  border-bottom: none;
+  color: none;
 }
 .menu ul {
   list-style: none;
@@ -788,7 +788,7 @@ NAVIGATION
 
 }
 .menu li a {
-  color: #333;
+  color: #fff;
   display: block;
   font-size: 0.87em;
   position: relative;
@@ -1585,6 +1585,10 @@ hefty styles here without worrying it will overload mobile.
     /*********************
   	HEADER SEARCH
   	*********************/
+  	
+  	width: 100%;
+min-height: 100px;
+display: block;
   
   }
   #header .widget-area {
@@ -1624,8 +1628,8 @@ hefty styles here without worrying it will overload mobile.
   *********************/
   .menu {
     clear: both;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #ddd;
+    background-color: none;
+    border-bottom: none;
     color: #333;
     /*********************
   	NAV EXTRAS

@@ -264,6 +264,78 @@ function genesis_do_example() {
 	</div>
 <?php } 
 
+
+add_action('genesis_title', 'link_twitter_bootstrap');
+function link_twitter_bootstrap() {		
+	?>
+		<style type="text/css">
+			body {
+			padding-top: 60px;
+			padding-bottom: 40px;
+			}
+		</style>
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	<?php
+}
+
+
+
+
+
+/* ----- remove nav and add Bootstrap nav ----- */
+
+remove_action('genesis_after_header', 'genesis_do_nav');
+add_action('genesis_after_header', 'do_bootstrap_nav');
+
+function do_bootstrap_nav() {
+	?>
+<!-- Static navbar -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+          <div class="wrap"> <!--added for genesis structure -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <?php
+            ?>
+            <a class="brand hidden-desktop" href="<?php echo get_bloginfo('url');  ?>"><?php echo get_bloginfo('name');  ?></a>
+            <div class="nav-collapse">
+            <?php wp_nav_menu(); ?>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+        </div>
+      </div>	
+      
+      <?php 
+}
+
+
+
+
+
+
+/* ----- Add Container Class to #inner ----- */
+
+// Add div.wrap inside of div#inner
+function child_before_content_sidebar_wrap() {
+    echo '<div class="container">';
+}
+add_action('genesis_before_content_sidebar_wrap', 'child_before_content_sidebar_wrap');
+
+function child_after_content_sidebar_wrap() {
+    echo '</div><!-- end .container -->';
+}
+add_action('genesis_after_content_sidebar_wrap', 'child_after_content_sidebar_wrap');
+
+
+
+
 /*
 To add it, just use the above example and replace the last function
 with "genesis_do_example". So to add this example above the header,

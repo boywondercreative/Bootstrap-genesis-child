@@ -28,6 +28,13 @@ function bfg_scripts_and_styles() {
 	wp_register_script( 'marquee', get_stylesheet_directory_uri() . '/library/js/libs/marquee.js', array(), '', false );
 	wp_register_script( 'jquery.marquee', get_stylesheet_directory_uri() . '/library/js/libs/jquery.marquee.js', array(), '', false );
 	
+	// bootstrap script
+    wp_register_script( 'bootstrap.min.js', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array( 'jquery' ), '', true );
+    // bootstrap responsive stylesheet
+    wp_register_style( 'bootstrap-responsive.min', get_stylesheet_directory_uri() . '/library/css/bootstrap-responsive.min.css', array(), '', 'all' );
+    // bootstrap stylesheet
+    wp_register_style( 'bootstrap.min', get_stylesheet_directory_uri() . '/library/css/bootstrap.min.css', array(), '', 'all' );
+	
     
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -45,6 +52,11 @@ function bfg_scripts_and_styles() {
     wp_enqueue_script( 'bfg-modernizr' ); 
 	//wp_enqueue_script( 'marquee' ); 
 	wp_enqueue_script( 'jquery.marquee' ); 
+	
+	 wp_enqueue_script( 'bootstrap.min.js' );
+     wp_enqueue_style('bootstrap.min');
+     wp_enqueue_style('bootstrap-responsive.min');
+	
 	
     wp_enqueue_style( 'bfg-stylesheet' );
     wp_enqueue_style('bones-ie-only');
