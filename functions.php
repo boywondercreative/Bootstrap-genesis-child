@@ -307,7 +307,7 @@ function do_bootstrap_nav() {
             <div class="nav-collapse">
             <?php wp_nav_menu(); ?>
             </div><!--/.nav-collapse -->
-          </div>
+          </div><!--/.wrap-->
         </div>
         </div>
       </div>	
