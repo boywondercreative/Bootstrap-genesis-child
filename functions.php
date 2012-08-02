@@ -280,10 +280,6 @@ function link_twitter_bootstrap() {
 	<?php
 }
 
-
-
-
-
 /* ----- remove nav and add Bootstrap nav ----- */
 
 remove_action('genesis_after_header', 'genesis_do_nav');
@@ -303,6 +299,7 @@ function do_bootstrap_nav() {
             </a>
             <?php
             ?>
+            <!--added bloginfo and url to the brandname, only shows on smaller devices-->
             <a class="brand hidden-desktop" href="<?php echo get_bloginfo('url');  ?>"><?php echo get_bloginfo('name');  ?></a>
             <div class="nav-collapse">
             <?php wp_nav_menu(); ?>
@@ -316,11 +313,7 @@ function do_bootstrap_nav() {
 }
 
 
-
-
-
-
-/* ----- Add Container Class to #inner ----- */
+/* ----- Adds .container to #inner ----- */
 
 // Add div.wrap inside of div#inner
 function child_before_content_sidebar_wrap() {
@@ -332,7 +325,6 @@ function child_after_content_sidebar_wrap() {
     echo '</div><!-- end .container -->';
 }
 add_action('genesis_after_content_sidebar_wrap', 'child_after_content_sidebar_wrap');
-
 
 
 
