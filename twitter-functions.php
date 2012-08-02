@@ -5,12 +5,14 @@
 --------------------------------------------------------------------------------------- */
 
 add_action('genesis_title', 'link_twitter_bootstrap');
-function link_twitter_bootstrap() {
-	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
-	echo '<link href="'. CHILD_URL . '/lib/css/bootstrap.css" rel="stylesheet">'."\r";
-	echo '<link href="'. CHILD_URL . '/lib/css/bootstrap-responsive.css" rel="stylesheet">'."\r";
-	echo '<link href="'. CHILD_URL . '/lib/css/docs.css" rel="stylesheet">'."\r";
-	echo '<link href="'. CHILD_URL . '/lib/js/google-code-prettify/prettify.css" rel="stylesheet">'."\r";
+function link_twitter_bootstrap() {	
+	// bootstrap stylesheet
+    wp_register_style( 'bootstrap', get_stylesheet_directory_uri() . '/library/css/bootstrap.css', array(), '', 'all' );
+    // bootstrap script
+    wp_register_script( 'bootstrap.min', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array( 'jquery' ), '', true );
+    
+    wp_enqueue_script( 'bootstrap.min' );
+    wp_enqueue_style('bootstrap');
 	
 	?>
 		<style type="text/css">
@@ -30,40 +32,25 @@ add_action('genesis_after_header', 'do_bootstrap_nav');
 
 function do_bootstrap_nav() {
 	?>
-	<div id="nav" class="navbar container">
-    	<div class="wrap navbar-inner">
-    		<div class="container">
-				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-	 
-				<!-- Be sure to leave the brand out there if you want it shown -->
-				<!-- <a class="brand" href="#">Pleiades Web Center</a> -->
-				<div class="hidden-desktop"><a href="http://cabforward.com" class="brand"><img src="images/cabforward_logo_sm.png" alt="" height="28" width="169">PleiadesWebCenter</a></div>
-				 
-				<!-- Everything you want hidden at 940px or less, place within here -->
-				<div class="nav-collapse">
-					<?php wp_nav_menu(); ?>
-					<form class="navbar-search pull-right">
-						<input type="text" class="search-query" placeholder="Search">
-						<input class="adminbar-button" type="submit" value="Search">
-					</form>
-					<!--
-					<div class="ab-item ab-empty-item" tabindex="-1">
-						<form id="adminbarsearch" method="get" action="http://dev.pleiadesservices.com/">
-						<input id="adminbar-search" class="adminbar-input" type="text" maxlength="150" value="" tabindex="10" name="s">
-						<input class="adminbar-button" type="submit" value="Search">
-						</form>
-					</div>
-					-->
-				</div>
-    		</div>
-		</div>
-	</div>
+ <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 	<?php 
 }
 
