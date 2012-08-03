@@ -317,14 +317,18 @@ function do_bootstrap_nav() {
 
 // Add div.wrap inside of div#inner
 function child_before_content_sidebar_wrap() {
-    echo '<div class="container">';
+    echo '<div class="container-fluid">';
+
 }
 add_action('genesis_before_content_sidebar_wrap', 'child_before_content_sidebar_wrap');
 
 function child_after_content_sidebar_wrap() {
     echo '</div><!-- end .container -->';
+   
 }
 add_action('genesis_after_content_sidebar_wrap', 'child_after_content_sidebar_wrap');
+
+
 
 
 
