@@ -569,7 +569,7 @@ small touch ups on larger stylesheets.
 
 ******************************************************************/
 body {
-  background-color: #FEFEFE;
+    background: url(img/bg-grid.png) repeat-x #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
@@ -1555,6 +1555,13 @@ hefty styles here without worrying it will overload mobile.
 	  width: 960px;
 	  margin: 0px auto;
 	  overflow: hidden;
+  }
+  
+  .navbar .wrap {
+   width: 960px;
+	  margin: 7px auto;
+	  overflow: hidden;
+	  
   }
   #content-sidebar-wrap {
     width: 750px;
